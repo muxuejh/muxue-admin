@@ -14,10 +14,10 @@ export default defineConfig(({ command }) => {
     plugins: [
       vue(),
       AutoImport({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [ElementPlusResolver()]
       }),
       Components({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [ElementPlusResolver()]
       }),
       // 自动导入 ElMessage 等组件的样式
       createStyleImportPlugin({
@@ -28,33 +28,33 @@ export default defineConfig(({ command }) => {
             esModule: true,
             resolveStyle: (name: string) => {
               return `element-plus/theme-chalk/${name}.css`
-            },
-          },
-        ],
+            }
+          }
+        ]
       }),
       // svg 图标配置
       createSvgIconsPlugin({
         // Specify the icon folder to be cached
         iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
         // Specify symbolId format
-        symbolId: 'icon-[dir]-[name]',
+        symbolId: 'icon-[dir]-[name]'
       }),
       viteMockServe({
-        localEnabled: command === 'serve',
-      }),
+        localEnabled: command === 'serve'
+      })
     ],
     resolve: {
       alias: {
-        '@': path.resolve('./src'), // 相对路径别名配置，使用 @ 代替 src
-      },
+        '@': path.resolve('./src') // 相对路径别名配置，使用 @ 代替 src
+      }
     },
     css: {
       preprocessorOptions: {
         scss: {
           javascriptEnabled: true,
-          additionalData: '@import "./src/styles/variable.scss";',
-        },
-      },
-    },
+          additionalData: '@import "./src/styles/variable.scss";'
+        }
+      }
+    }
   }
 })
