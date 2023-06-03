@@ -6,6 +6,8 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'virtual:svg-icons-register'
 // 自定义插件，用于注册自定义全局组件
 import globalComponents from '@/components'
+// 全局样式
+import '@/styles/index.scss'
 
 const app = createApp(App)
 
