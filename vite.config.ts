@@ -5,6 +5,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createStyleImportPlugin, ElementPlusResolve } from 'vite-plugin-style-import'
 import path from 'path'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,6 +29,13 @@ export default defineConfig({
           },
         },
       ],
+    }),
+    // svg 图标配置
+    createSvgIconsPlugin({
+      // Specify the icon folder to be cached
+      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+      // Specify symbolId format
+      symbolId: 'icon-[dir]-[name]',
     }),
   ],
   resolve: {

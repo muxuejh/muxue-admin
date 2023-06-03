@@ -13,5 +13,6 @@ declare module '@vue/runtime-core' {
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElPagination: typeof import('element-plus/es')['ElPagination']
+    SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
   }
 }
