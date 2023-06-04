@@ -1,1 +1,10 @@
 @import './reset.scss';
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+  min-height: 600px;
+}
