@@ -1,3 +1,6 @@
+/**
+ * 封装 localStorage 和 sessionStorage
+ */
 enum CacheType {
   Local,
   Session
