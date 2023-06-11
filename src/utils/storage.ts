@@ -14,16 +14,11 @@ class Cache {
   }
 
   setStorage(key: string, value: any) {
-    if (value) {
-      this.storage.setItem(key, JSON.stringify(value))
-    }
+    this.storage.setItem(key, JSON.stringify(value))
   }
 
   getStorage(key: string) {
-    const value = this.storage.getItem(key)
-    if (value) {
-      return JSON.parse(value)
-    }
+    return JSON.parse(this.storage.getItem(key) as string)
   }
 
   removeStorage(key: string) {
