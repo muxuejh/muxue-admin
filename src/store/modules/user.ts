@@ -4,6 +4,8 @@ import { reqLogin } from '@/api/user'
 import { LoginFormData } from '@/api/user/type'
 import { IUserState } from '../types'
 import { localCache } from '@/utils/storage'
+import router from '@/router'
+
 const useUserStore = defineStore('user', {
   state: (): IUserState => {
     return {
@@ -20,6 +22,9 @@ const useUserStore = defineStore('user', {
       } else {
         return Promise.reject(new Error(res.data.message) as Error)
       }
+    },
+    logout() {
+      router.replace('/login')
     }
   },
   getters: {}

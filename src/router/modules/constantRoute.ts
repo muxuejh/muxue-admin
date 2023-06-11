@@ -1,22 +1,26 @@
 import { RouteRecordRaw } from 'vue-router'
 
-export const constantRoute = [
+export const constantRoute: Array<RouteRecordRaw> = [
   {
     path: '/',
-    component: () => import('@/views/home/index.vue')
+    redirect: '/home',
+    meta: { hidden: true }
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/login/index.vue')
+    component: () => import('@/views/login/index.vue'),
+    meta: { hidden: true }
   },
   {
     path: '/404',
     name: '404',
-    component: () => import('@/views/error/404.vue')
+    component: () => import('@/views/error/404.vue'),
+    meta: { hidden: true }
   },
   {
     path: '/:pathMatch(.*)*',
-    component: () => import('@/views/error/404.vue')
+    component: () => import('@/views/error/404.vue'),
+    meta: { hidden: true }
   }
-] as RouteRecordRaw[]
+]
