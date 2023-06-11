@@ -1,6 +1,6 @@
 <template>
   <div class="footer flx-center">
-    <a href="javascript:;">2022 © vue3-admin-test By liuwei Technology.</a>
+    <a href="javascript:;">2023 © muxue-admin By liuwei Technology.</a>
   </div>
 </template>
 
