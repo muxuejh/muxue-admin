@@ -19,7 +19,7 @@ const isCollapse = computed(() => globalStore.isCollapse)
 <style lang="scss" scoped>
 .hamburger-container {
   margin-right: 16px;
-  box-sizing: border-box;
+  margin-top: 2px;
   cursor: pointer;
 }
 </style>

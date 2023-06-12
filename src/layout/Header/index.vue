@@ -1,6 +1,7 @@
 <template>
   <div class="navbar">
     <Hamburger />
+    <Breadcrumb />
     <div class="navbar-right">
       <Avatar class="navbar-item" />
     </div>
@@ -9,6 +10,7 @@
 
 <script setup lang="ts">
 import Hamburger from './components/Hamburger.vue'
+import Breadcrumb from './components/Breadcrumb.vue'
 import Avatar from './components/Avatar.vue'
 </script>
 
