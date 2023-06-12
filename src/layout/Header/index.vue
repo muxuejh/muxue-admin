@@ -3,6 +3,7 @@
     <Hamburger />
     <Breadcrumb />
     <div class="navbar-right">
+      <Refresh />
       <Avatar class="navbar-item" />
     </div>
   </div>
@@ -11,6 +12,7 @@
 <script setup lang="ts">
 import Hamburger from './components/Hamburger.vue'
 import Breadcrumb from './components/Breadcrumb.vue'
+import Refresh from './components/Refresh.vue'
 import Avatar from './components/Avatar.vue'
 </script>
 

@@ -5,4 +5,5 @@ export interface IUserState {
 /* GlobalState */
 export interface GlobalState {
   isCollapse: boolean
+  isRefresh: boolean
 }

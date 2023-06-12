@@ -2,13 +2,28 @@
   <div>
     <router-view v-slot="{ Component, route }">
       <transition appear name="fade-transform" mode="out-in">
-        <component :is="Component" :key="route.fullPath" />
+        <component :is="Component" :key="route.fullPath" v-if="isRefresh" />
       </transition>
     </router-view>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { nextTick, ref, watch } from 'vue'
+import useGlobalStore from '@/store/modules/global'
+
+const globalStore = useGlobalStore()
+const isRefresh = ref(true)
+watch(
+  () => globalStore.isRefresh,
+  () => {
+    isRefresh.value = false
+    nextTick(() => {
+      isRefresh.value = true
+    })
+  }
+)
+</script>
 
 <style scoped>
 .fade-transform-enter-from {
