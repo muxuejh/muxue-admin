@@ -3,7 +3,8 @@
     <Hamburger />
     <Breadcrumb />
     <div class="navbar-right">
-      <Refresh />
+      <Refresh class="navbar-item" />
+      <screenFull class="navbar-item" />
       <Avatar class="navbar-item" />
     </div>
   </div>
@@ -13,6 +14,7 @@
 import Hamburger from './components/Hamburger.vue'
 import Breadcrumb from './components/Breadcrumb.vue'
 import Refresh from './components/Refresh.vue'
+import screenFull from './components/screenFull.vue'
 import Avatar from './components/Avatar.vue'
 </script>
 
@@ -36,8 +38,6 @@ import Avatar from './components/Avatar.vue'
     :deep(.navbar-item) {
       display: inline-block;
       margin-left: 18px;
-      font-size: 22px;
-      color: #5a5e66;
       box-sizing: border-box;
       cursor: pointer;
     }

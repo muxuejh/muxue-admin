@@ -1,6 +1,6 @@
 <template>
   <div class="refresh" @click="handleRefresh">
-    <el-icon><Refresh /></el-icon>
+    <el-icon :size="18"><Refresh /></el-icon>
   </div>
 </template>
 
@@ -14,8 +14,4 @@ const handleRefresh = () => {
 }
 </script>
 
-<style scoped lang="scss">
-.refresh {
-  cursor: pointer;
-}
-</style>
+<style scoped lang="scss"></style>
