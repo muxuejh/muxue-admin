@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 // element css（有配置自动到了 element Plus 样式，但 ElMessageBox 样式不生效，所以在这全部导入）
-// import 'element-plus/dist/index.css'
+import 'element-plus/dist/index.css'
 // element icons
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 // svg
