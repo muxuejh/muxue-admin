@@ -1,5 +1,10 @@
+interface IUserInfo {
+  username: string
+  avatar: string
+}
 export interface IUserState {
   token: string
+  userInfo: IUserInfo
 }
 
 /* GlobalState */

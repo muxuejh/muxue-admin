@@ -9,7 +9,8 @@ import router from '@/router'
 const useUserStore = defineStore('user', {
   state: (): IUserState => {
     return {
-      token: localCache.getStorage(LOGIN_TOKEN) ?? ''
+      token: localCache.getStorage(LOGIN_TOKEN) ?? '',
+      userInfo: localCache.getStorage('userInfo') ?? {}
     }
   },
   actions: {
@@ -17,7 +18,9 @@ const useUserStore = defineStore('user', {
       const res: any = await reqLogin(data)
       if (res.code === 200) {
         this.token = res.data.token
+        // this.username = res.data.username
         localCache.setStorage(LOGIN_TOKEN, this.token)
+        localCache.setStorage('userInfo', { username: res.data.username, avatar: res.data.avatar })
         localCache.setStorage(LOGIN_TIME, res.data.tokenTime)
         return 'ok'
       } else {
