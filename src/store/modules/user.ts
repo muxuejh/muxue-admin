@@ -1,4 +1,4 @@
-import { LOGIN_TOKEN } from '@/global/constants'
+import { LOGIN_TOKEN, LOGIN_TIME } from '@/global/constants'
 import { defineStore } from 'pinia'
 import { reqLogin } from '@/api/user'
 import { LoginFormData } from '@/api/user/type'
@@ -18,12 +18,14 @@ const useUserStore = defineStore('user', {
       if (res.code === 200) {
         this.token = res.data.token
         localCache.setStorage(LOGIN_TOKEN, this.token)
+        localCache.setStorage(LOGIN_TIME, res.data.tokenTime)
         return 'ok'
       } else {
         return Promise.reject(new Error(res.data.message) as Error)
       }
     },
     logout() {
+      localCache.clearStorage()
       router.replace('/login')
     }
   },

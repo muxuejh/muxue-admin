@@ -13,6 +13,9 @@ dependencies:
   element-plus:
     specifier: ^2.3.6
     version: 2.3.6(vue@3.2.47)
+  nprogress:
+    specifier: ^0.2.0
+    version: 0.2.0
   pinia:
     specifier: ^2.0.36
     version: 2.0.36(typescript@5.0.2)(vue@3.2.47)
@@ -33,6 +36,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^17.6.5
     version: 17.6.5
+  '@types/nprogress':
+    specifier: ^0.2.0
+    version: 0.2.0
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.59.8
     version: 5.59.8(@typescript-eslint/parser@5.59.8)(eslint@8.41.0)(typescript@5.0.2)
@@ -1049,6 +1055,10 @@ packages:
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/nprogress@0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
     dev: true
 
   /@types/resolve@1.17.1:
@@ -4386,6 +4396,10 @@ packages:
     dependencies:
       path-key: 3.1.1
     dev: true
+
+  /nprogress@0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
 
   /nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
