@@ -27,10 +27,8 @@ router.beforeEach((to, form, next) => {
   // 5.判断是否有 Token，没有重定向到 login 页面
   if (!localCache.getStorage(LOGIN_TOKEN)) return next({ path: LOGIN_URL, replace: true })
 
-  // 7.Token 是否过期
-  if (diffTokenTime()) {
-    return userStore.logout()
-  }
+  // 6.Token 是否过期
+  if (diffTokenTime()) return userStore.logout()
 
   // 7.正常访问页面
   next()
