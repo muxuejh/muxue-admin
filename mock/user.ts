@@ -1,4 +1,7 @@
-//createUserList:次函数执行会返回一个数组,数组里面包含两个用户信息
+/**
+ * @description 此函数执行会返回一个数组,数组里面包含两个用户信息
+ * @returns 用户信息
+ */
 function createUserList() {
   return [
     {
@@ -27,14 +30,13 @@ function createUserList() {
     }
   ]
 }
-//对外暴露一个数组:数组里面包含两个接口
-//登录假的接口
-//获取用户信息的假的接口
+
+//对外暴露一个数组:数组里面包含两个接口（登录接口，获取用户信息的接口）
 export default [
   // 用户登录接口
   {
-    url: '/api/user/login', //请求地址
-    method: 'post', //请求方式
+    url: '/api/user/login',
+    method: 'post',
     response: ({ body }) => {
       //获取请求体携带过来的用户名与密码
       const { username, password } = body
@@ -44,10 +46,10 @@ export default [
       )
       //没有用户返回失败信息
       if (!checkUser) {
-        return { code: 201, data: { message: '账号或者密码不正确' } }
+        return { code: 201, data: { message: '账号或者密码不正确' }, msg: '登录失败' }
       }
       //如果有返回成功信息
-      return { code: 200, data: checkUser }
+      return { code: 200, data: checkUser, msg: '登录成功' }
     }
   },
   // 获取用户信息
@@ -61,10 +63,10 @@ export default [
       const checkUser = createUserList().find(item => item.token === token)
       //没有返回失败的信息
       if (!checkUser) {
-        return { code: 201, data: { message: '获取用户信息失败' } }
+        return { code: 201, data: { message: '获取用户信息失败' }, msg: '获取用户信息失败' }
       }
       //如果有返回成功信息
-      return { code: 200, data: { checkUser } }
+      return { code: 200, data: { checkUser }, msg: '获取用户信息成功' }
     }
   }
 ]
