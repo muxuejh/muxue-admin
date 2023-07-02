@@ -74,7 +74,7 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
         // ElMessage.success('登录成功')
         ElNotification({
           title: getTimeState(),
-          message: '欢迎登录',
+          message: '欢迎登录 Muxue-Admin',
           type: 'success',
           duration: 3000
         })

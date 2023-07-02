@@ -1,7 +1,7 @@
 <template>
   <div class="logo flx-center">
     <img src="@/assets/images/logo.png" alt="logo" />
-    <span v-show="!isCollapse">muxue-admin</span>
+    <span v-show="!isCollapse">Muxue-Admin</span>
   </div>
 </template>
 
