@@ -1,5 +1,5 @@
 import Http from '@/api'
-import type { Login } from './type'
+import type { Login } from '../interface'
 
 //登录
 export const reqLogin = (data: Login.ReqLogin) => Http.post<Login.ResLogin>('/user/login', data)

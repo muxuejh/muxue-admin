@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { GlobalState } from '../types/index'
+import { GlobalState } from '../interface'
 import { localCache } from '@/utils/storage'
 
 const useGlobalStore = defineStore('global', {

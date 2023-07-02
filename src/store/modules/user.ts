@@ -1,8 +1,8 @@
 import { LOGIN_TOKEN, LOGIN_TIME } from '@/global/constants'
 import { defineStore } from 'pinia'
-import { reqLogin } from '@/api/user'
-import { Login } from '@/api/user/type'
-import { IUserState } from '../types'
+import { reqLogin } from '@/api/modules/user'
+import { Login } from '@/api/interface'
+import { IUserState } from '../interface'
 import { localCache } from '@/utils/storage'
 import router from '@/router'
 
