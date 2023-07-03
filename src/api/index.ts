@@ -6,7 +6,7 @@ import axios, {
   AxiosResponse
 } from 'axios'
 import { ElMessage } from 'element-plus'
-import { ResultData } from '@/api/user/type'
+import { ResultData } from '@/api/interface'
 
 const config = {
   baseURL: import.meta.env.VITE_APP_BASE_API,
