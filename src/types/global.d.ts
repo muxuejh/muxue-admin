@@ -1,3 +1,5 @@
+import 'vue-router'
+
 /* vite */
 declare interface ViteEnv {
   NODE_ENV: 'development' | 'production' | 'test'
@@ -7,4 +9,15 @@ declare interface ViteEnv {
 }
 interface ImportMetaEnv extends ViteEnv {
   __: unknown
+}
+
+/* RouteMeta */
+declare module 'vue-router' {
+  interface RouteMeta {
+    title?: string
+    icon?: string
+    hiddenOfSubMenu?: boolean
+    hidden?: boolean
+    keepAlive?: boolean
+  }
 }
