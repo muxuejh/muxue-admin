@@ -27,7 +27,7 @@ export namespace Login {
     userId: number
     username: string
   }
-  export interface ResUserInfo extends Result {
+  export interface ResUserInfo {
     routes: string[]
     buttons: string[]
     roles: string[]
