@@ -7,12 +7,6 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-.flx-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .home {
   width: 100%;
   height: 100%;
