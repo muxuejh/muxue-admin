@@ -50,6 +50,7 @@ defineProps<{ menuList: RouteRecordRaw[] }>()
     }
   }
 }
+// 设置菜单折叠时的样式
 .el-menu--popup {
   .el-menu-item {
     background-color: #191a20;
