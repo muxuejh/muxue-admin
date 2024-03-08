@@ -11,7 +11,7 @@ router.beforeEach((to, form, next) => {
   // 1.NProgress 开始
   NProgress.start()
 
-  // 2.动态设置标题
+  // 2.动态设置网页标题
   const title = import.meta.env.VITE_GLOB_APP_TITLE
   document.title = to.meta.title ? `${to.meta.title} - ${title}` : title
 

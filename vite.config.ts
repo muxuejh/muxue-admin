@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv, ConfigEnv, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -9,7 +9,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { viteMockServe } from 'vite-plugin-mock'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
+  const env = loadEnv(mode, process.cwd())
   return {
     plugins: [
       vue(),
@@ -55,6 +56,12 @@ export default defineConfig(({ command }) => {
           additionalData: '@import "./src/styles/variable.scss";'
         }
       }
+    },
+    server: {
+      host: '0.0.0.0',
+      port: Number(env.VITE_APP_PORT),
+      open: env.VITE_APP_OPEN === 'true' ? true : env.VITE_APP_OPEN === 'false' ? false : '',
+      cors: true
     }
   }
 })

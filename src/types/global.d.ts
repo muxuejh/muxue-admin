@@ -6,6 +6,8 @@ declare interface ViteEnv {
   VITE_GLOB_APP_TITLE: string
   VITE_APP_BASE_API: string
   VITE_SERVE: string
+  VITE_APP_PORT: number
+  VITE_APP_OPEN: boolean
 }
 interface ImportMetaEnv extends ViteEnv {
   __: unknown
