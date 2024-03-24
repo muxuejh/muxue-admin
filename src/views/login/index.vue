@@ -41,7 +41,6 @@ import type { FormInstance, FormRules } from 'element-plus'
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import useUserStore from '@/store/modules/user'
-import SvgIcon from '@/components/SvgIcon/index.vue'
 import getTimeState from '@/utils/time'
 
 const form = reactive({
