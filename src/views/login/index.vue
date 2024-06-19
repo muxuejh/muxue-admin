@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ElMessage, ElNotification } from 'element-plus'
+import { ElNotification } from 'element-plus'
 import type { FormInstance, FormRules } from 'element-plus'
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -70,15 +70,12 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
       try {
         await userStore.login(form)
         router.push('/')
-        // ElMessage.success('登录成功')
         ElNotification({
           title: getTimeState(),
           message: '欢迎登录 Muxue-Admin',
           type: 'success',
           duration: 3000
         })
-      } catch (error) {
-        ElMessage.error((error as Error).message)
       } finally {
         loading.value = false
       }

@@ -16,15 +16,10 @@ const useUserStore = defineStore('user', {
   actions: {
     async login(data: Login.ReqLogin) {
       const res = await reqLogin(data)
-      if (res.code === 200) {
-        this.token = res.data.token
-        localCache.setStorage(LOGIN_TOKEN, this.token)
-        localCache.setStorage('userInfo', { username: res.data.username, avatar: res.data.avatar })
-        localCache.setStorage(LOGIN_TIME, res.data.tokenTime)
-        return 'ok'
-      } else {
-        return Promise.reject(new Error(res.msg) as Error)
-      }
+      this.token = res.data.token
+      localCache.setStorage(LOGIN_TOKEN, this.token)
+      localCache.setStorage('userInfo', { username: res.data.username, avatar: res.data.avatar })
+      localCache.setStorage(LOGIN_TIME, res.data.tokenTime)
     },
     logout() {
       localCache.clearStorage()
