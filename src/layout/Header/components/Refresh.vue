@@ -10,7 +10,8 @@ import useGlobalStore from '@/store/modules/global'
 const globalStore = useGlobalStore()
 
 const handleRefresh = () => {
-  globalStore.isRefresh = !globalStore.isRefresh
+  // 触发key值变化，实现刷新
+  globalStore.triggerRefresh()
 }
 </script>
 

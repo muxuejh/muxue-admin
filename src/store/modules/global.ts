@@ -7,12 +7,15 @@ const useGlobalStore = defineStore('global', {
     // 折叠菜单
     isCollapse: JSON.parse(localCache.getStorage('isCollapse')) ?? false,
     // 控制刷新效果
-    isRefresh: false
+    refreshKey: 0
   }),
   actions: {
     setCollapse() {
       this.isCollapse = !this.isCollapse
       localCache.setStorage('isCollapse', this.isCollapse)
+    },
+    triggerRefresh() {
+      this.refreshKey++ // 每次递增确保刷新
     }
   },
   getters: {}
